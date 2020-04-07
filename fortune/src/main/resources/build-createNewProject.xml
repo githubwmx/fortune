@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="copyNewProject" default="default" basedir=".">
+	<property name="newProject" value="spark" />
+	<target name="default">
+		<copy todir="F:/workspace.all/${newProject}">
+			<fileset dir="F:/workspace.all/template-springboot/">
+				<include name="**/*.*"></include>	
+			</fileset>
+		</copy>
+		<replace file="F:/workspace.all/${newProject}/pom.xml" token="template-springboot" value="${newProject}"></replace>
+		<replace file="F:/workspace.all/${newProject}/.project" token="template-springboot" value="${newProject}"></replace>
+	</target>
+</project>
